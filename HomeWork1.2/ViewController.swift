@@ -1,47 +1,50 @@
-//
-//  ViewController.swift
-//  HomeWork1.2
-//
-//  Created by Paul on 12.02.22.
-//
+//Я не придумал, как можно объединить три круга с моим светофором воедино, чтобы
+//можно было создать одни Constraints и программа была универсальна для любого устр-ва :(
 
 import UIKit
-//MARK: Help me pls: Можно ли собрать картинку светофора и мои кружки в один стэк, чтобы можно было адаптировать его под любой экран?
 class ViewController: UIViewController {
+    
     @IBOutlet weak var redLightView: UIView!
-    @IBOutlet weak var yellowLighView: UIView!
+    @IBOutlet weak var yellowLightView: UIView!
     @IBOutlet weak var greenLightView: UIView!
     
     @IBOutlet weak var changeColorBtnView: UIButton!
     
-    
-    override func viewDidLoad() { //Если я понял правильно, эта функция, унаследованная от класса вью контроллер, предназначена для визуальных преобразований
+    override func viewDidLoad() { //Эта функция создана для работы с внешним видом эл-тов?
         super.viewDidLoad()
         
-        //Setting corner radius for traffic lights
-        redLightView.layer.cornerRadius = 51
-        yellowLighView.layer.cornerRadius = 51
-        greenLightView.layer.cornerRadius = 51
+        //Setting corner radius for our lights
+        redLightView.layer.cornerRadius = 48
+        yellowLightView.layer.cornerRadius = 48
+        greenLightView.layer.cornerRadius = 48
         
-        //Get the right colors alpha
-        redLightView.alpha = 1
-        yellowLighView.alpha = 0.1
+        //Setting alpha for lights
+        redLightView.alpha = 0.1
+        yellowLightView.alpha = 0.1
         greenLightView.alpha = 0.1
         
         //Setting corner radius for button
         changeColorBtnView.layer.cornerRadius = 10
     }
-    @IBAction func changeColorBtnAct(_ sender: Any) {
+    
+    @IBAction func changeColorBtnAction(_ sender: Any) {
+        
+        changeColorBtnView.setTitle("Change color!", for: .normal)
+        
         if redLightView.alpha == 1 {
+            
             redLightView.alpha = 0.1
-            yellowLighView.alpha = 1
-        } else if yellowLighView.alpha == 1 {
-            yellowLighView.alpha = 0.1
+            yellowLightView.alpha = 1
+            
+        } else if yellowLightView.alpha == 1 {
+            yellowLightView.alpha = 0.1
             greenLightView.alpha = 1
+            
         } else {
             greenLightView.alpha = 0.1
             redLightView.alpha = 1
         }
     }
+    
 }
 
