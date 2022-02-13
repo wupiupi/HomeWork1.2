@@ -1,6 +1,3 @@
-//Я не придумал, как можно объединить три круга с моим светофором воедино, чтобы
-//можно было создать одни Constraints и программа была универсальна для любого устр-ва :(
-
 import UIKit
 class ViewController: UIViewController {
     
@@ -14,9 +11,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         //Setting corner radius for our lights
-        redLightView.layer.cornerRadius = 48
-        yellowLightView.layer.cornerRadius = 48
-        greenLightView.layer.cornerRadius = 48
+        redLightView.layer.cornerRadius = 38
+        yellowLightView.layer.cornerRadius = 38
+        greenLightView.layer.cornerRadius = 38
         
         //Setting alpha for lights
         redLightView.alpha = 0.1
